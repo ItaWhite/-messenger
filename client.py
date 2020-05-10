@@ -53,6 +53,6 @@ qt5reactor.install()
 
 from twisted.internet import reactor
 
-reactor.connectTCP('localhost', 1111, Connection(chat))
 chat.reactor = reactor
+reactor.connectTCP('localhost', 1111, Connection(chat))
 reactor.run()
