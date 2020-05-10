@@ -4,6 +4,8 @@ import sys
 from PyQt5 import QtWidgets
 from interface import interface
 
+port = 10
+
 
 class Connection1(LineOnlyReceiver):
     factory: 'Connection'
@@ -54,5 +56,5 @@ qt5reactor.install()
 from twisted.internet import reactor
 
 chat.reactor = reactor
-reactor.connectTCP('localhost', 1111, Connection(chat))
+reactor.connectTCP('localhost', port, Connection(chat))
 reactor.run()
