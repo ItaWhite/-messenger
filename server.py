@@ -21,7 +21,7 @@ class ServerMessages(LineOnlyReceiver):
         if self.nickname is not None:
             content = self.nickname + ': ' + content
 
-            for person in self.factory.users:  # передавать сообщение всем клиентам
+            for person in self.factory.users:
                 person.sendLine(content.encode())
         else:
             self.nickname = content
