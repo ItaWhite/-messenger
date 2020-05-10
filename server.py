@@ -4,6 +4,8 @@ from twisted.internet import reactor
 from twisted.internet.protocol import connectionDone, ServerFactory
 from twisted.protocols.basic import LineOnlyReceiver
 
+port = 10
+
 
 class ServerMessages(LineOnlyReceiver):
     factory: 'Server'
@@ -40,5 +42,5 @@ class ServerStarter(ServerFactory):
         print('Сервер остановлен')
 
 
-reactor.listenTCP(1111, ServerStarter())
+reactor.listenTCP(port, ServerStarter())
 reactor.run()
